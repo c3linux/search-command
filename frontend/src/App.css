@@ -1,0 +1,372 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: fira;
+    src: url(static/FiraCode-Regular.woff);
+}
+
+body {
+    background-color: #263238;
+}
+
+.navbar{
+    padding: 20px 0;
+    background-color: #263238;
+    display: flex;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+}
+
+li {
+    
+    padding: 5px 20px;
+    margin: auto;
+    margin: 0 5px;
+    
+}
+.navlink{
+    font-size: 20px;
+    font-family: fira;
+    color: #b0bec5;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+::selection{
+    background-color: #263238;
+}
+
+input {
+    font-family: fira;
+    background: rgb(38, 50, 56);
+    background: linear-gradient(90deg, rgba(38, 50, 56, 1) 0%, rgba(69, 90, 100, 1) 50%, rgba(38, 50, 56, 1) 100%);
+    display: block;
+    margin: auto;
+   
+    width: 100%;
+    padding: 1% 0;
+    font-size: 2.5rem;
+    text-align: center;
+    outline: none;
+    border: 0;
+    color: #cfd8dc;
+    position: relative;
+}
+
+@media screen and (max-width:768px) {
+    input{
+        font-size: 1.5rem;
+    }
+}
+
+.input {
+    position: relative;
+}
+
+input::placeholder {
+    color: #78909c;
+}
+
+input:focus~.bottom {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+input:focus~.top {
+    transform-origin: top right;
+    transform: scaleX(1);
+}
+
+.bottom,
+.top {
+    height: 1px;
+    left: 0;
+    right: 0;
+    transform: scaleX(0);
+}
+
+.bottom {
+    bottom: 0;
+    transform-origin: bottom right;
+}
+
+.top {
+    top: 0;
+    transform-origin: top left;
+}
+
+.spaninp {
+    position: absolute;
+    background-color: #90a4ae;
+    transition: transform 0.5s ease;
+}
+
+p,
+h3 {
+    font-family: fira;
+    color: rgb(51, 48, 48);
+
+}
+
+.card {
+    position: relative;
+    margin-top: 3% !important;
+    background: rgb(84, 110, 122);
+    margin: auto;
+    width: 65%;
+    padding: 1% 2%;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+
+
+.card-bottom,
+.card-top {
+    height: 1px;
+    left: 0;
+    right: 0;
+    transform: scaleX(0);
+}
+
+.card-left,
+.card-right {
+    width: 1px;
+    top: 0;
+    bottom: 0;
+    transform: scaleY(0);
+}
+
+.card-bottom {
+    bottom: 0;
+    transform-origin: bottom right;
+}
+
+.card-top {
+    top: 0;
+    transform-origin: top left;
+}
+
+.card-right {
+    right: 0;
+    transform-origin: top right;
+}
+
+.card-left {
+    left: 0;
+    transform-origin: bottom left;
+}
+
+.cardspan {
+    position: absolute;
+    background-color: 	#cfd8dc;
+    transition: transform 0.5s ease;
+}
+
+.top-active {
+    transform-origin: top right;
+    transform: scaleX(1);
+}
+
+.right-active {
+    transform-origin: bottom right;
+    transform: scaleY(1);
+}
+
+.bottom-active {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+.left-active {
+    transform-origin: top left;
+    transform: scaleY(1);
+}
+
+.card p {
+    color: #b0bec5;
+}
+
+.card h3 {
+    color: #cfd8dc;
+}
+
+
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover button {
+    border-color: rgba(84, 110, 122, 1);
+}
+
+/* button {
+    background-color: transparent;
+    border: 1px solid #263238;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #cfd8dc;
+    transition: 0.5s;
+    position: relative;
+    min-width: 50px;
+    min-height: 25px;
+}
+
+button::after,
+button::before {
+    content: "";
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    height: 100%;
+    width: 50%;
+    opacity: 1;
+    background-color: transparent;
+    border-radius: 5px;
+    border-right: 2px solid rgba(84, 110, 122, 1);
+    opacity: 0;
+    transition: 0.2s linear;
+}
+
+button::before {
+    left: 0 !important;
+    border-left: 2px solid rgba(84, 110, 122, 1) !important;
+    border-right: none;
+}
+
+button:hover::after {
+    opacity: 1;
+    right: -15%;
+}
+
+button:hover::before {
+    opacity: 1;
+    left: -15% !important;
+} */
+
+/* .pagination {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+
+.cards {
+    display: none;
+}
+
+i:hover {
+    cursor: pointer;
+    background-color: #b0bec5;
+    border-radius: 5px;
+    color: rgb(84, 110, 122);
+    ;
+}
+
+i:target {
+
+    color: red;
+}
+
+i {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    padding: 5px;
+    color: #b0bec5;
+    transition: 0.3s;
+
+}
+
+.acitve {
+    color: red;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(360deg);
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.input{
+    width: 100%;
+}
+
+button{
+    border-radius: 5px;
+    transition: 0.5s;
+    margin-top: 35px;
+    width: 150px;
+    height: 50px;
+    border: 1px solid rgba(84, 110, 122, 1);
+    position: relative;
+    color: #b0bec5;
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: transparent;
+}
+
+button::after,
+button::before {
+    content: "";
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    height: 100%;
+    width: 50%;
+    opacity: 1;
+    background-color: transparent;
+    border-radius: 5px;
+    border-right: 2px solid rgba(84, 110, 122, 1);
+    opacity: 0;
+    transition: 0.2s linear;
+    
+}
+
+button::after{
+    border-top: 2px solid rgba(84, 110, 122, 1) !important;
+}
+
+button::before {
+    left: 0 !important;
+    border-left: 2px solid rgba(84, 110, 122, 1) !important;
+    border-bottom: 2px solid rgba(84, 110, 122, 1) !important;
+    
+    border-right: none;
+}
+
+button:hover::after {
+    opacity: 1;
+    right: -15%;
+    top: -37%;
+    
+}
+
+button:hover::before {
+    opacity: 1;
+    left: -15% !important;
+    top: 37%;
+}

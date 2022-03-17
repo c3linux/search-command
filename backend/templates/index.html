@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+<div class="col-md-8 mt-3 left">
+    {% for card in card_list %}
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="card-title">{{ card.title }}</h2>
+         
+            <p class="card-text">{{card.content|slice:":200" }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
