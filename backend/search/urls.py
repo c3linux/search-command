@@ -1,4 +1,4 @@
-from . import views
+from search import views
 from django.urls import path, include
 from rest_framework import routers
 from search import views

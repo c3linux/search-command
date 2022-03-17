@@ -3,7 +3,7 @@ import React from 'react'
 const PostCommand = () => {
     return (
         <div className='post-command'>
-            <form>
+            <form method="post">
                 <div className="input">
                     <input type="text" placeholder='Command Title'  />
                     <span className="top spaninp"></span>
