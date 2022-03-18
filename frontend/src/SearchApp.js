@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import image from "./clipboards.svg";
 import axios from 'axios';
 const SearchApp = () => {
     const [searchitem, setSearchterm] = useState('');
