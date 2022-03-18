@@ -11,9 +11,11 @@
 
 body {
     background-color: #263238;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 
-.navbar{
+.navbar {
     padding: 20px 0;
     background-color: #263238;
     display: flex;
@@ -26,13 +28,14 @@ ul {
 }
 
 li {
-    
+
     padding: 5px 20px;
     margin: auto;
     margin: 0 5px;
-    
+
 }
-.navlink{
+
+.navlink {
     font-size: 20px;
     font-family: fira;
     color: #b0bec5;
@@ -40,7 +43,7 @@ li {
     cursor: pointer;
 }
 
-::selection{
+::selection {
     background-color: #263238;
 }
 
@@ -50,7 +53,7 @@ input {
     background: linear-gradient(90deg, rgba(38, 50, 56, 1) 0%, rgba(69, 90, 100, 1) 50%, rgba(38, 50, 56, 1) 100%);
     display: block;
     margin: auto;
-   
+
     width: 100%;
     padding: 1% 0;
     font-size: 2.5rem;
@@ -62,7 +65,7 @@ input {
 }
 
 @media screen and (max-width:768px) {
-    input{
+    input {
         font-size: 1.5rem;
     }
 }
@@ -167,7 +170,7 @@ h3 {
 
 .cardspan {
     position: absolute;
-    background-color: 	#cfd8dc;
+    background-color: #cfd8dc;
     transition: transform 0.5s ease;
 }
 
@@ -301,22 +304,23 @@ i {
     }
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
-.input{
+
+.input {
     width: 100%;
 }
 
-.content-input{
+.content-input {
     height: 70px !important;
     font-size: 1.8rem;
 }
 
-button{
+.submit {
     border-radius: 5px;
     transition: 0.5s;
     margin-top: 35px;
@@ -330,12 +334,12 @@ button{
     cursor: pointer;
 }
 
-button:hover{
+.submit:hover {
     background-color: transparent;
 }
 
-button::after,
-button::before {
+.submit::after,
+.submit::before {
     content: "";
     position: absolute;
     right: 0%;
@@ -348,30 +352,83 @@ button::before {
     border-right: 2px solid rgba(84, 110, 122, 1);
     opacity: 0;
     transition: 0.2s linear;
-    
+
 }
 
-button::after{
+.submit::after {
     border-top: 2px solid rgba(84, 110, 122, 1) !important;
 }
 
-button::before {
+.submit::before {
     left: 0 !important;
     border-left: 2px solid rgba(84, 110, 122, 1) !important;
     border-bottom: 2px solid rgba(84, 110, 122, 1) !important;
-    
+
     border-right: none;
 }
 
-button:hover::after {
+.submit:hover::after {
     opacity: 1;
     right: -15%;
     top: -37%;
-    
+
 }
 
-button:hover::before {
+.submit:hover::before {
     opacity: 1;
     left: -15% !important;
     top: 37%;
+}
+
+
+.post-command {
+    position: relative;
+}
+
+
+/* alert */
+.status {
+    padding: 10px 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateX(300px);
+    font-family: fira;
+    src: url(static/FiraCode-Regular.woff);
+    -webkit-box-shadow: -11px 0px 21px 2px rgba(0, 0, 0, 0.73);
+    box-shadow: -11px 0px 21px 2px rgba(0, 0, 0, 0.73);
+}
+
+.status .status-content{
+    font-size: 20px;
+}
+
+.status-ok{
+    color: #64c4b2;
+}
+
+.status-error{
+    color: #c46464;
+}
+
+.status-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cancel {
+    font-size: 20px;
+    color: #b0bec5;
+    padding: 10px;
+    margin-left: 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
 }
