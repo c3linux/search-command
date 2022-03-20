@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Recaptcha from 'react-recaptcha'
 
@@ -18,30 +18,30 @@ const PostCommand = () => {
 
     const postCommands = async (e) => {
         e.preventDefault();
+
         try {
-            const response = await axios({
-                method: 'POST',
-                url: 'http://164.92.177.109/53api54/15cards14/',
-                headers: { 'content-type': 'application/json' },
-                credentials: 'include',
-                data: {
-                    title,
-                    content
-                }
-            })
-            if (response) {
-                if (isVerified) {
-                    recaptchaInstance.reset();
-                    setStatus("Command added succesfully!")
-                    setStatusContent(true)
-                    setVerified(false)
-                    setTitle('')
-                    setContent('')
-                }
-                else {
-                    setStatusContent(false)
-                    setStatus("Please verify that you are human!")
-                }
+            if (isVerified) {
+
+                const response = await axios({
+                    method: 'POST',
+                    url: 'http://164.92.177.109/53api54/15cards14/',
+                    headers: { 'content-type': 'application/json' },
+                    credentials: 'include',
+                    data: {
+                        title,
+                        content
+                    }
+                })
+                recaptchaInstance.reset();
+                setStatus("Command added succesfully!")
+                setStatusContent(true)
+                setVerified(false)
+                setTitle('')
+                setContent('')
+            }
+            else {
+                setStatusContent(false)
+                setStatus("Please verify that you are human!")
             }
 
             setTimeout(() => {
@@ -54,6 +54,7 @@ const PostCommand = () => {
             setTimeout(() => {
                 setReady(false)
             }, 1500, setReady(true), setStatus("Error detected!"))
+
         }
 
     }
@@ -90,9 +91,10 @@ const PostCommand = () => {
                     ref={e => recaptchaInstance = e}
                     sitekey="6LecafYeAAAAAPaKW9GU0O4TLowzBkPoQcn9GohX"
                     onloadCallback={callback}
-                    render='explicit'
+                    render='onload'
                     verifyCallback={verifyCallback}
-                    theme='dark '
+                    theme='dark'
+                    hl='en'
                 />
             </div>
 
