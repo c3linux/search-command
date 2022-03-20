@@ -12,7 +12,7 @@ const SearchApp = () => {
     }
 
     const getData = async () => {
-        const response = await axios.get('http://localhost:8000/api/cards/')
+        const response = await axios.get('http://164.92.177.109/53api54/15cards14/')
         setData(response.data)
     }
 
